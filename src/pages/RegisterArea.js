@@ -3,7 +3,7 @@ import { AuthContext } from "../App";
 import Input from "../components/Input";
 import Button from "../components/Button";
 
-const userRegister = { firstname: "thanawat", lastname: "waranon", tel: "0897654857" };
+// const userRegister = { firstname: "thanawat", lastname: "waranon", tel: "0897654857" };
 
 const RegisterArea = () => {
   const { auth, setAuth } = useContext(AuthContext);

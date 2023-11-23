@@ -7,11 +7,10 @@ function UserData() {
   const { auth, setAuth } = useContext(AuthContext);
   const { count, setCount } = useContext(AuthContext);
 
-  console.log("auth", auth);
+  // console.log("auth", auth);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [tel, setTel] = useState("");
-  const [test, setTest] = useState("");
   const [newAuthData, setNewAuthData] = useState(auth);
 
   useEffect(() => {
@@ -19,22 +18,6 @@ function UserData() {
       setNewAuthData(auth);
     }
   }, [auth]);
-
-  // const Search = () => {
-  //   const searchByFirstname = auth.filter((data) => data.firstname.toLowerCase().includes(firstName.toLowerCase()));
-  //   const searchBylastname = auth.filter((data) => data.lastname.toLowerCase().includes(lastName.toLowerCase()));
-  //   const searchByTel = auth.filter((data) => data.tel.includes(tel));
-
-  //   if (firstName) {
-  //     return searchByFirstname;
-  //   } else if (lastName) {
-  //     return searchBylastname;
-  //   } else if (tel) {
-  //     return searchByTel;
-  //   } else {
-  //     return auth;
-  //   }
-  // };
 
   useEffect(() => {
     const searchByFirstname = auth.filter((data) => data.firstname.toLowerCase().includes(firstName.toLowerCase()));
@@ -63,8 +46,6 @@ function UserData() {
     setNewAuthData(sortByFirstname);
   };
 
-  console.log("test", test);
-
   const SortBylastname = () => {
     const sortBylastname = [...newAuthData].sort((a, b) =>
       a.lastname.toLowerCase() > b.lastname.toLowerCase()
@@ -86,6 +67,9 @@ function UserData() {
       <div className="flex items-center justify-between">
         <div className="mb-5 text-xl">
           Seats Available: <span className="font-semibold">{count - auth.length}</span>
+        </div>{" "}
+        <div className="mb-5 text-xl">
+          Current Seats: <span className="font-semibold">{auth.length}</span>
         </div>
         <div className="mb-5 text-xl">
           All Seats: <span className="font-semibold">{count}</span>

@@ -12,7 +12,7 @@ const Input = ({ value, onChange, placeholder, type, name, id, width }) => {
       } focus:outline-none hover:border-blue-400`}
       value={value}
       onChange={onChange}
-      autocomplete="off"
+      autoComplete="off"
     />
   );
 };
